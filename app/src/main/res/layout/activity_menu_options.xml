@@ -154,11 +154,11 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="180dp"
-        android:layout_height="143dp"
+        android:layout_width="199dp"
+        android:layout_height="165dp"
         app:srcCompat="@drawable/logo15"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="227dp"
+        tools:layout_editor_absoluteX="208dp"
         tools:layout_editor_absoluteY="425dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
