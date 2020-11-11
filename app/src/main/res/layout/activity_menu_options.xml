@@ -7,6 +7,19 @@
     >
 
     <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="266dp"
+        android:layout_height="373dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.678"
+        app:srcCompat="@drawable/logo15"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
         android:id="@+id/imageView6"
         android:layout_width="190dp"
         android:layout_height="126dp"
@@ -151,14 +164,5 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="199dp"
-        android:layout_height="165dp"
-        app:srcCompat="@drawable/logo15"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="208dp"
-        tools:layout_editor_absoluteY="425dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
