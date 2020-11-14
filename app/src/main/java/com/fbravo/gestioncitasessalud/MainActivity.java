@@ -79,16 +79,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast toast= Toast.makeText(MainActivity.this,"Ingrese un DNI asociado",Toast.LENGTH_LONG);
                         toast.show();
                     }
-
                     if (txtPassword.getText().toString()!=usuario.getPassword())
                     {
                         Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
                         toast.show();
                     }
-
-
-
-
                 }catch (JSONException e){
                     Toast.makeText(MainActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
                 }

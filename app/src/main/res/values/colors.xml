@@ -7,6 +7,6 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="inicioDegradado">#A1AFF5</color>
-    <color name="finDegradado">#052CEE</color>
+    <color name="inicioDegradado">#0075BE</color>
+    <color name="finDegradado">#0075BE</color>
 </resources>
