@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     //startActivity(intent);
 
                     buscarUsuarios();
-                    Intent intent=new Intent(MainActivity.this,MainMenu.class);
+                    Intent intent=new Intent(MainActivity.this,MenuOptions.class);
                     startActivity(intent);
                 }
             }
