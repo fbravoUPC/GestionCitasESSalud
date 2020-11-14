@@ -1,168 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".MenuOptions"
+    android:orientation="vertical"
     >
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="266dp"
-        android:layout_height="373dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.952"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678"
-        app:srcCompat="@drawable/logo15"
-        tools:ignore="MissingConstraints" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="190dp"
-        android:layout_height="126dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:background="@drawable/degradado_fondo"
+            android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView8"
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:src="@drawable/dis" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bienvenida Maria Tello"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="77882110"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#ffffff"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_cita"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Contactanos"
-        android:textSize="20sp"
+        android:text="Registra tu cita"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#3C5BF9"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="648dp" />
+        android:drawableStart="@drawable/ic_cita"
+        android:drawablePadding="10dp"
+        />
 
-    <TextView
-        android:id="@+id/textView6"
+    <Button
+        android:id="@+id/btn_consultar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:text="Consulta tus citas"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#3C5BF9"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_consultar"
+        android:drawablePadding="10dp"
+        />
+    <Button
+        android:id="@+id/btn_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Perfil"
-        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#3C5BF9"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="466dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:srcCompat="@drawable/ic_baseline_date_range_24" />
-
-    <TextView
-        android:id="@+id/textView5"
+        android:drawableStart="@drawable/ic_perfil"
+        android:drawablePadding="10dp"
+        />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:text="Consultar"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.574" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/ic_perfil" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="48dp"
-        android:text="Citas"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:srcCompat="@drawable/ic_consultar" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="36dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:srcCompat="@drawable/ic_contact" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Asociada Maria Tello"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:text="Seguridad"
-        android:textSize="20sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#3C5BF9"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        tools:layout_editor_absoluteY="546dp"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="67dp"
-        android:layout_height="57dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="28dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/ic_seguridad" />
-
-    <TextView
-        android:id="@+id/textView10"
+        android:drawableStart="@drawable/ic_seguridad"
+        android:drawablePadding="10dp"
+        />
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="12345678"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        android:text="Contactenos"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
+        android:textColor="#ffffff"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="#3C5BF9"
+        android:textStyle="bold"
+        android:drawableStart="@drawable/ic_contact"
+        android:drawablePadding="10dp"
+        />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

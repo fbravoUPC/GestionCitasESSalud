@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SolicitudCitas"
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/degradado_fondo">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="133dp"
+                android:layout_height="107dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/dis"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.521" />
+
+            <TextView
+                android:id="@+id/txt_nombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Hola Maria Tello"
+                android:textColor="#F6EFEF"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="20dp"
+                android:text="77882110"
+                android:textColor="#F4EFEF"
+                android:textSize="18sp"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nombre" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#709DE6">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="60dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_cita"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="8dp"
+                android:text="ELIGE EL AREA"
+                android:textColor="#F6EFEF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/imageView3"
+                app:layout_constraintTop_toTopOf="@+id/imageView3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_ginecologia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="50dp"
+        android:background="#709DE6"
+        android:drawableStart="@drawable/ic_consultar"
+        android:drawablePadding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="ginecología"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <Button
+        android:id="@+id/btn_mamografia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#709DE6"
+        android:drawableStart="@drawable/ic_perfil"
+        android:drawablePadding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="mamografía"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_patologia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#709DE6"
+        android:drawableStart="@drawable/ic_seguridad"
+        android:drawablePadding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="patología"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_consulta_general"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:background="#709DE6"
+        android:drawableStart="@drawable/ic_contact"
+        android:drawablePadding="10dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="consulta general"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_width="159dp"
+        android:layout_height="139dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="25dp"
+        android:src="@drawable/logo15">
+
+    </ImageView>
+
+</LinearLayout>
