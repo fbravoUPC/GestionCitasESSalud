@@ -29,11 +29,11 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:src="@drawable/dis" />
+                android:src="@drawable/personv2" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Bienvenida Maria Tello"
+                android:text="Bienvenida Jose Tello"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:fontFamily="monospace"
