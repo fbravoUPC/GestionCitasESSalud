@@ -12,9 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionCitasESSalud"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MenuCitas"></activity>
+        <activity android:name=".MenuModelo"></activity>
+        <activity android:name=".MenuCitas" />
         <activity android:name=".MainMenu" />
-        <activity android:name=".MenuOptions"></activity>
+        <activity android:name=".MenuOptions" />
         <activity android:name=".UserList" />
         <activity android:name=".MainActivity">
             <intent-filter>

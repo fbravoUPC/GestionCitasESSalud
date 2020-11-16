@@ -93,7 +93,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
-<LinearLayout
+    <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="50dp"
     android:background="#4F9ECF"
@@ -120,6 +120,7 @@
             android:fontFamily="monospace"
            />
 </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
