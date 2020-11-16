@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuCitas"
+    tools:context=".Horario"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -23,7 +23,7 @@
                 android:layout_height="150dp"
                 android:background="@drawable/degradado_fondo"
                 android:orientation="vertical"
-               >
+                >
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="100dp"
@@ -94,17 +94,17 @@
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
     <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:background="#4F9ECF"
-    >
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4F9ECF"
+        >
 
         <ImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:alpha=".47"
             android:gravity="fill_vertical"
-            android:src="@drawable/citas"
+            android:src="@drawable/mamografia"
             android:layout_marginLeft="30dp"
             android:layout_gravity="center_vertical"/>
 
@@ -112,14 +112,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="SOLICITUD DE CITAS"
+            android:text="MAMOGRAFIA"
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff"
             android:textSize="50px"
             android:textStyle="bold"
             android:fontFamily="monospace"
-           />
-</LinearLayout>
+            />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -128,112 +128,49 @@
         android:layout_marginLeft="15dp">
 
         <LinearLayout
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
             android:orientation="vertical"
             android:layout_gravity="center"
             android:layout_marginTop="30dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="10dp">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/ginecologia"
-                    android:layout_gravity="center_vertical"/>
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                >
+
                 <Button
-                    android:id="@+id/btn_ginecologia"
-                    android:text="Ginecologia"
+                    android:id="@+id/btn_horarios"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:textColor="#8190A5"
-                    android:textSize="18dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_marginLeft="10dp"
+                    android:background="#89C7ED"
                     android:fontFamily="monospace"
+                    android:gravity="center"
+                    android:text="VER HORARIOS"
                     android:textAllCaps="false"
-                    android:gravity="fill_vertical"
-                    android:layout_gravity="center_vertical"
-                    />
+                    android:textColor="#ffffff"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/mamografia"/>
-                <Button
-                    android:id="@+id/btn_mamografia"
-                    android:text="Mamografia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:textColor="#8190A5"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"
-                    android:gravity="fill_vertical"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
+                android:layout_marginTop="20dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/patologia"/>
-                <Button
-                    android:id="@+id/btn_patologia"
-                    android:text="Patologia"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:textColor="#8190A5"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"
-                    android:gravity="fill_vertical"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
+                android:layout_marginTop="20dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-
-                    android:gravity="fill_vertical"
-                    android:src="@drawable/consultageneral"/>
-                <Button
-                    android:id="@+id/btn_consulta_general"
-                    android:text="Consulta General"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="#FFFFFF"
-                    android:textColor="#8190A5"
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"
-                    android:gravity="fill_vertical"
-                    android:layout_gravity="center_vertical"/>
-            </LinearLayout>
+                android:layout_marginTop="20dp"/>
 
         </LinearLayout>
         <androidx.cardview.widget.CardView
@@ -256,6 +193,7 @@
                     android:src="@drawable/unidos"/>
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
     </RelativeLayout>
 
 </LinearLayout>
