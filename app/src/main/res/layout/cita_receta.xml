@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".MenuModelo"
     android:orientation="vertical">
     <RelativeLayout
@@ -92,36 +92,9 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
     </RelativeLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="#4F9ECF"
-        >
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:alpha=".47"
-            android:gravity="fill_vertical"
-            android:src="@drawable/ic_perfil"
-            android:layout_marginLeft="30dp"
-            android:layout_gravity="center_vertical"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="ACTUALIZAR DATOS PERSONALES"
-            android:layout_marginLeft="10dp"
-            android:textColor="#ffffff"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:fontFamily="monospace"
-            />
-    </LinearLayout>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="590dp"
         android:layout_marginLeft="15dp">
 
         <LinearLayout
@@ -144,14 +117,14 @@
                         android:id="@+id/button2"
                         android:layout_width="159dp"
                         android:layout_height="match_parent"
-                        android:text="nombres" />
+                        android:text="area" />
 
                     <Button
                         android:id="@+id/button4"
-                        android:layout_width="207dp"
+                        android:layout_width="230dp"
                         android:layout_height="match_parent"
-                        android:background="ffffff"
-                        android:text="" />
+                        android:text=""
+                        android:background="ffffff"/>
                 </TableRow>
 
                 <TableRow
@@ -162,7 +135,7 @@
                         android:id="@+id/button3"
                         android:layout_width="154dp"
                         android:layout_height="wrap_content"
-                        android:text="apellidos" />
+                        android:text="fecha" />
 
                     <Button
                         android:id="@+id/button5"
@@ -180,7 +153,7 @@
                         android:id="@+id/button6"
                         android:layout_width="140dp"
                         android:layout_height="match_parent"
-                        android:text="direccion" />
+                        android:text="estado" />
 
                     <Button
                         android:id="@+id/button8"
@@ -198,7 +171,7 @@
                         android:id="@+id/button7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="numero telefonico" />
+                        android:text="doctor" />
 
                     <Button
                         android:id="@+id/button10"
@@ -216,15 +189,15 @@
                     <Button
                         android:id="@+id/button15"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="estado civil"
+                        android:layout_height="70dp"
+                        android:text="diagnostico"
 
                         />
 
                     <Button
                         android:id="@+id/button16"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="70dp"
                         android:text=""
                         android:background="ffffff"/>
                 </TableRow>
@@ -236,13 +209,13 @@
                     <Button
                         android:id="@+id/button17"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="nombre del conyugue" />
+                        android:layout_height="70dp"
+                        android:text="indicaciones" />
 
                     <Button
                         android:id="@+id/button18"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="70dp"
                         android:text=""
                         android:background="ffffff"/>
                 </TableRow>
@@ -254,14 +227,13 @@
                     <Button
                         android:id="@+id/button19"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="nombre de emergencia"
-                        />
+                        android:layout_height="70dp"
+                        android:text="receta" />
 
                     <Button
                         android:id="@+id/button20"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="70dp"
                         android:text=""
                         android:background="ffffff"/>
                 </TableRow>
@@ -275,11 +247,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="50dp"
             android:layout_marginBottom="32dp"
-            android:drawableStart="@drawable/ic_update"
+            android:drawableStart="@drawable/ic_home"
             android:drawablePadding="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="actualizar"
+            android:text="volver"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -289,13 +261,15 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="50dp"
             android:layout_marginBottom="32dp"
-            android:drawableStart="@drawable/ic_cancel"
+            android:drawableStart="@drawable/ic_eliminar"
             android:drawablePadding="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="cancelar"
+            android:text="eliminar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
+
+

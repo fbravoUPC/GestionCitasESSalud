@@ -5,8 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuModelo"
+    tools:context=".CitaDetalle"
     android:orientation="vertical">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
@@ -35,39 +36,48 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:orientation="vertical"
-                android:layout_marginLeft="10dp">
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buenas noches, Jose Tello"
-                    android:textSize="40px"
-                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
                     android:fontFamily="monospace"
+                    android:text="Buenas noches, Jose Tello"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
-                    android:layout_marginTop="30dp" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
                     android:text="443322467"
+                    android:textAllCaps="false"
                     android:textColor="#ffffff"
                     android:textSize="40px"
-                    android:textStyle="bold"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"/>
+                    android:textStyle="bold" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
                     android:text="39 años"
+                    android:textAllCaps="false"
                     android:textColor="#ffffff"
                     android:textSize="40px"
-                    android:textStyle="bold"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"/>
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="483dp"
+                    android:text="Button" />
             </LinearLayout>
 
 
@@ -99,11 +109,12 @@
         >
 
         <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="40dp"
+            android:layout_height="48dp"
             android:alpha=".47"
             android:gravity="fill_vertical"
-            android:src="@drawable/ic_perfil"
+            android:src="@drawable/ic_cell"
+
             android:layout_marginLeft="30dp"
             android:layout_gravity="center_vertical"/>
 
@@ -111,14 +122,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="ACTUALIZAR DATOS PERSONALES"
-            android:layout_marginLeft="10dp"
+            android:text="ENVIAR CITA"
+            android:layout_marginLeft="20dp"
             android:textColor="#ffffff"
-            android:textSize="16sp"
+            android:textSize="50px"
             android:textStyle="bold"
             android:fontFamily="monospace"
             />
+
     </LinearLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -127,7 +140,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+
+            android:layout_marginTop="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -144,14 +158,14 @@
                         android:id="@+id/button2"
                         android:layout_width="159dp"
                         android:layout_height="match_parent"
-                        android:text="nombres" />
+                        android:text="Cod Cita" />
 
                     <Button
                         android:id="@+id/button4"
-                        android:layout_width="207dp"
+                        android:layout_width="230dp"
                         android:layout_height="match_parent"
-                        android:background="ffffff"
-                        android:text="" />
+                        android:text=""
+                        android:background="ffffff"/>
                 </TableRow>
 
                 <TableRow
@@ -162,7 +176,7 @@
                         android:id="@+id/button3"
                         android:layout_width="154dp"
                         android:layout_height="wrap_content"
-                        android:text="apellidos" />
+                        android:text="socio" />
 
                     <Button
                         android:id="@+id/button5"
@@ -180,7 +194,7 @@
                         android:id="@+id/button6"
                         android:layout_width="140dp"
                         android:layout_height="match_parent"
-                        android:text="direccion" />
+                        android:text="documento de identidad" />
 
                     <Button
                         android:id="@+id/button8"
@@ -198,7 +212,7 @@
                         android:id="@+id/button7"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="numero telefonico" />
+                        android:text="especialidad" />
 
                     <Button
                         android:id="@+id/button10"
@@ -210,16 +224,13 @@
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    >
+                    android:layout_height="match_parent">
 
                     <Button
                         android:id="@+id/button15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="estado civil"
-
-                        />
+                        android:text="fecha de cita" />
 
                     <Button
                         android:id="@+id/button16"
@@ -237,7 +248,7 @@
                         android:id="@+id/button17"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="nombre del conyugue" />
+                        android:text="hora" />
 
                     <Button
                         android:id="@+id/button18"
@@ -255,8 +266,7 @@
                         android:id="@+id/button19"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="nombre de emergencia"
-                        />
+                        android:text="doctor" />
 
                     <Button
                         android:id="@+id/button20"
@@ -266,20 +276,37 @@
                         android:background="ffffff"/>
                 </TableRow>
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:id="@+id/button25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="centro de salud" />
+
+                    <Button
+                        android:id="@+id/button26"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:background="ffffff"/>
+                </TableRow>
             </TableLayout>
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/button11"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="32dp"
-            android:drawableStart="@drawable/ic_update"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="36dp"
+            android:drawableStart="@drawable/ic_email"
             android:drawablePadding="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="actualizar"
+            android:text="enviar email"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -287,15 +314,17 @@
             android:id="@+id/button22"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="32dp"
-            android:drawableStart="@drawable/ic_cancel"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="36dp"
+            android:drawableStart="@drawable/ic_phone"
             android:drawablePadding="5dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="cancelar"
+            android:text="enviar sms"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 </LinearLayout>
