@@ -53,6 +53,20 @@ public class MainActivity extends AppCompatActivity {
 
                     buscarUsuarios();
 
+                    //if (txtDNI.getText().toString()!=usuario.getDni())
+                    //{
+                      //  Toast toast= Toast.makeText(MainActivity.this,"Ingrese un DNI asociado",Toast.LENGTH_LONG);
+                      //  toast.show();
+                    //}
+                    if (txtPassword.getText().toString()!=usuario.getPassword())
+                    {
+                        Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+                    else {
+                        Intent intent = new Intent(MainActivity.this, MenuOptions.class);
+                        startActivity(intent);
+                    }
                 }
             }
         });
@@ -73,18 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
                     usuario=new Usuario(objecto.getString("dni"), objecto.getString("password"));
 
-                    if (txtDNI.getText().toString()!=usuario.getDni())
-                    {
-                        Toast toast= Toast.makeText(MainActivity.this,"Ingrese un DNI asociado",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    if (txtPassword.getText().toString()!=usuario.getPassword())
-                    {
-                        Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    Intent intent=new Intent(MainActivity.this,MenuOptions.class);
-                    startActivity(intent);
                 }catch (JSONException e){
                     Toast.makeText(MainActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
