@@ -160,12 +160,16 @@
                         android:layout_height="match_parent"
                         android:text="Cod Cita" />
 
-                    <Button
-                        android:id="@+id/button4"
+                    <TextView
+                        android:id="@+id/txtCodCita"
                         android:layout_width="230dp"
                         android:layout_height="match_parent"
-                        android:text=""
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
                         android:background="#ffffff"/>
+
                 </TableRow>
 
                 <TableRow
@@ -178,11 +182,14 @@
                         android:layout_height="wrap_content"
                         android:text="socio" />
 
-                    <Button
-                        android:id="@+id/button5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtSocio"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -196,11 +203,14 @@
                         android:layout_height="match_parent"
                         android:text="documento de identidad" />
 
-                    <Button
-                        android:id="@+id/button8"
-                        android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/txtDNI"
+                        android:layout_width="230dp"
                         android:layout_height="match_parent"
-                        android:text=""
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -214,11 +224,14 @@
                         android:layout_height="wrap_content"
                         android:text="especialidad" />
 
-                    <Button
-                        android:id="@+id/button10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtEspecialidad"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -232,11 +245,14 @@
                         android:layout_height="wrap_content"
                         android:text="fecha de cita" />
 
-                    <Button
-                        android:id="@+id/button16"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtFechaCita"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="5dp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -250,11 +266,14 @@
                         android:layout_height="wrap_content"
                         android:text="hora" />
 
-                    <Button
-                        android:id="@+id/button18"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtHora"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="16sp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -268,11 +287,14 @@
                         android:layout_height="wrap_content"
                         android:text="doctor" />
 
-                    <Button
-                        android:id="@+id/button20"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtDoctor"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="16sp"
                         android:background="#ffffff"/>
                 </TableRow>
 
@@ -286,18 +308,22 @@
                         android:layout_height="wrap_content"
                         android:text="centro de salud" />
 
-                    <Button
-                        android:id="@+id/button26"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
+                    <TextView
+                        android:id="@+id/txtCentroSalud"
+                        android:layout_width="230dp"
+                        android:layout_height="match_parent"
+                        android:text="hello"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="16sp"
                         android:background="#ffffff"/>
+
                 </TableRow>
             </TableLayout>
         </LinearLayout>
 
         <Button
-            android:id="@+id/button11"
+            android:id="@+id/bunEnviarEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
@@ -311,7 +337,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <Button
-            android:id="@+id/button22"
+            android:id="@+id/btnEnviarSms"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
