@@ -40,9 +40,9 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
+                    android:id="@+id/NombreUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buenas noches, Jose Tello"
                     android:textSize="40px"
                     android:textStyle="bold"
                     android:fontFamily="monospace"
@@ -50,6 +50,7 @@
                     android:textColor="#ffffff"
                     android:layout_marginTop="30dp" />
                 <TextView
+                    android:id="@+id/DNIUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -60,6 +61,7 @@
                     android:fontFamily="monospace"
                     android:textAllCaps="false"/>
                 <TextView
+                    android:id="@+id/EdadUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"

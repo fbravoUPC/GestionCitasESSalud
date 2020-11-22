@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -13,52 +14,40 @@ import java.time.temporal.ChronoUnit;
 
 public class MenuCitas extends AppCompatActivity {
 
-    Button btn_ginecologia, btn_mamografia, btn_patologia, btn_consulta_general;
-
+    Button btn_ginecologia;
+    TextView NombreUsuario,DNIusuario,EdadUsuario;
+    public static int edad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_citas);
-
-        //int años = Integer.parseInt(MainActivity.fnac);
-        //int edad = 2020 - años;
+        String year= MainActivity.fnac.substring(0,4);
+        int fechanac = Integer.parseInt(year);
+        edad = 2020 - fechanac;
+        asignarReferencias();
         btn_ginecologia = findViewById(R.id.btn_ginecologia);
-        btn_mamografia = findViewById(R.id.btn_mamografia);
-        btn_patologia = findViewById(R.id.btn_patologia);
-        btn_consulta_general = findViewById(R.id.btn_consulta_general);
         btn_ginecologia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //MenuOptions.cita.setId_especialidad(2);
-                openActivity2();
-
-            }
-        });
-        btn_mamografia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //MenuOptions.cita.setId_especialidad(2);
-                openActivity2();
-
-            }
-        });
-        btn_patologia.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //MenuOptions.cita.setId_especialidad(2);
-                openActivity2();
-
-            }
-        });
-        btn_consulta_general.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //MenuOptions.cita.setId_especialidad(2);
+               // MenuOptions.cita.setId_especialidad(2);
                 openActivity2();
 
             }
         });
     }
+
+    private void asignarReferencias() {
+        NombreUsuario = findViewById(R.id.EntradaUserCitas);
+        DNIusuario = findViewById(R.id.DNIUserCitas);
+        EdadUsuario =findViewById(R.id.EdadUserCitas);
+        NombreUsuario.setText("Bienvenido " + MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
+        DNIusuario.setText(MainActivity.dni);
+        EdadUsuario.setText(edad +" años");
+        btn_ginecologia=findViewById(R.id.btn_ginecologia);
+
+
+    }
+
     public void openActivity2() {
         Intent intent = new Intent(this, UbicacionSede.class);
         startActivity(intent);
