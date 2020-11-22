@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuCitas"
+    tools:context=".UbicacionSede"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -40,9 +40,9 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
+                    android:id="@+id/NombreUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buenas noches, Jose Tello"
                     android:textSize="40px"
                     android:textStyle="bold"
                     android:fontFamily="monospace"
@@ -50,6 +50,7 @@
                     android:textColor="#ffffff"
                     android:layout_marginTop="30dp" />
                 <TextView
+                    android:id="@+id/DNIUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -60,6 +61,7 @@
                     android:fontFamily="monospace"
                     android:textAllCaps="false"/>
                 <TextView
+                    android:id="@+id/EdadUserSedes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -104,7 +106,7 @@
             android:layout_height="50dp"
             android:alpha=".47"
             android:gravity="fill_vertical"
-            android:src="@drawable/citas"
+            android:src="@drawable/ic_location"
             android:layout_marginLeft="30dp"
             android:layout_gravity="center_vertical"/>
 
@@ -112,7 +114,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="SELECCIONA TU HORARIO"
+            android:text="LISTA DE SEDES"
             android:layout_marginLeft="20dp"
             android:textColor="#ffffff"
             android:textSize="50px"
@@ -120,43 +122,12 @@
             android:fontFamily="monospace"
             />
     </LinearLayout>
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listaSedes"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:paddingLeft="10sp"
+        android:paddingTop="20dp"/>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/listaHorarios"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="10dp"/>
-
-        <Button
-            android:id="@+id/button25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginBottom="24dp"
-            android:drawableStart="@drawable/ic_check1"
-            android:drawablePadding="5dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="confirmar"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
-            android:id="@+id/btn_regresar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="50dp"
-            android:layout_marginBottom="24dp"
-            android:drawableStart="@drawable/ic_return"
-            android:drawablePadding="5dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="volver"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

@@ -31,14 +31,18 @@ public class MainActivity extends AppCompatActivity {
 
     EditText txtDNI,txtPassword;
     Button btnEntrar;
-
+    public static int edad;
     Usuario usuario;
-    public static String name,lastnamep,lastnamem,pwd,pwd2,dni;
+    public static String name,lastnamep,lastnamem,pwd,pwd2,dni,fnac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+      /**  String year= fnac.substring(0,4);
+         int fechanac = Integer.parseInt(year);
+         edad = 2020 - fechanac;**/
        asginarReferencias();
 
 
@@ -85,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         lastnamep=objeto.getString("apellidopate");
                         lastnamem=objeto.getString("apellidomate");
                         dni=objeto.getString("dni");
+                        fnac= objeto.getString("fechnacimiento");
 
                         Intent intent = new Intent(MainActivity.this, MenuOptions.class);
                         startActivity(intent);
