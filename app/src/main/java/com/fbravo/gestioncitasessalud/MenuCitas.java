@@ -16,13 +16,14 @@ public class MenuCitas extends AppCompatActivity {
 
     Button btn_ginecologia;
     TextView NombreUsuario,DNIusuario,EdadUsuario;
+    int edad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_citas);
-
-        //int años = Integer.parseInt(MainActivity.fnac);
-        //int edad = 2020 - años;
+        String year= MainActivity.fnac.substring(0,4);
+        int fechanac = Integer.parseInt(year);
+        edad = 2020 - fechanac;
         asignarReferencias();
         btn_ginecologia = findViewById(R.id.btn_ginecologia);
         btn_ginecologia.setOnClickListener(new View.OnClickListener() {
@@ -41,6 +42,7 @@ public class MenuCitas extends AppCompatActivity {
         EdadUsuario =findViewById(R.id.EdadUserCitas);
         NombreUsuario.setText("Bienvenido " + MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
+        EdadUsuario.setText(edad +" años");
         btn_ginecologia=findViewById(R.id.btn_ginecologia);
 
 
