@@ -39,6 +39,7 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
+                    android:id="@+id/NombreCitasProgramada"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buenas noches, Jose Tello"
@@ -49,6 +50,7 @@
                     android:textColor="#ffffff"
                     android:layout_marginTop="30dp" />
                 <TextView
+                    android:id="@+id/DNICitasProgramadas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -59,6 +61,7 @@
                     android:fontFamily="monospace"
                     android:textAllCaps="false"/>
                 <TextView
+                    android:id="@+id/EdadCitasProgramadas"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
