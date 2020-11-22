@@ -7,14 +7,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.fbravo.gestioncitasessalud.entidades.Usuario;
 
 import org.json.JSONArray;
@@ -30,13 +33,14 @@ public class MainActivity extends AppCompatActivity {
     Button btnEntrar;
 
     Usuario usuario;
-
+    public static String name,lastnamep,lastnamem,pwd,pwd2,dni;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
        asginarReferencias();
+
 
     }
 
@@ -48,10 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (validar()){
-                   //Intent intent=new Intent(MainActivity.this,MainMenu.class);
-                    //startActivity(intent);
-
-                    buscarUsuarios();
+                buscarUsuarios();
 
                 }
             }
@@ -64,38 +65,57 @@ public class MainActivity extends AppCompatActivity {
         String url="http://essalud.atwebpages.com/index.php/usuarios/"+texto;
 
 
+
         StringRequest peticion=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
+
+
+
+
+                    pwd2= txtPassword.getText().toString();
                     JSONArray arreglo= new JSONArray(response);
-                    JSONObject objecto=arreglo.getJSONObject(0);
+                    JSONObject objeto = arreglo.getJSONObject(0);
+                    pwd=objeto.getString("password");
 
-                    usuario=new Usuario(objecto.getString("dni"), objecto.getString("password"));
-
-                    if (txtDNI.getText().toString()!=usuario.getDni())
+                    if (pwd2.equals(pwd)  )
                     {
-                        Toast toast= Toast.makeText(MainActivity.this,"Ingrese un DNI asociado",Toast.LENGTH_LONG);
-                        toast.show();
+                        name= objeto.getString("nombre");
+                        lastnamep=objeto.getString("apellidopate");
+                        lastnamem=objeto.getString("apellidomate");
+                        dni=objeto.getString("dni");
+
+                        Intent intent = new Intent(MainActivity.this, MenuOptions.class);
+                        startActivity(intent);
                     }
-                    if (txtPassword.getText().toString()!=usuario.getPassword())
-                    {
+                    else {
                         Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
                         toast.show();
                     }
-                    Intent intent=new Intent(MainActivity.this,MenuOptions.class);
-                    startActivity(intent);
-                }catch (JSONException e){
-                    Toast.makeText(MainActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                }catch (Exception e){
+                    Toast.makeText(MainActivity.this, "Usuario y/o password incorrecto",Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this,error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        RequestQueue cola = Volley.newRequestQueue(this);
+        cola.add(peticion);
+
+
+
+
+
     }
+
 
     public boolean validar()
     {
