@@ -1,4 +1,4 @@
 package com.fbravo.gestioncitasessalud;
 
-public class EstadoCitas {
+public class Confirmar_cita {
 }
