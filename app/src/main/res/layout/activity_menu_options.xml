@@ -31,6 +31,7 @@
                 android:layout_marginTop="10dp"
                 android:src="@drawable/personv2" />
             <TextView
+                android:id="@+id/NombreUsuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Bienvenido Jose Tello"
@@ -43,6 +44,7 @@
                 android:layout_marginTop="10dp" />
 
             <TextView
+                android:id="@+id/DNIusuario"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
