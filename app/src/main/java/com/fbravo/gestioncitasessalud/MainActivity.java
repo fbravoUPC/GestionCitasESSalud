@@ -7,14 +7,17 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.fbravo.gestioncitasessalud.entidades.Usuario;
 
 import org.json.JSONArray;
@@ -38,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
        asginarReferencias();
 
+
     }
 
     private void asginarReferencias() {
@@ -47,27 +51,10 @@ public class MainActivity extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (validar()){
-                   //Intent intent=new Intent(MainActivity.this,MainMenu.class);
-                    //startActivity(intent);
 
-                    buscarUsuarios();
+                buscarUsuarios();
 
-                    //if (txtDNI.getText().toString()!=usuario.getDni())
-                    //{
-                      //  Toast toast= Toast.makeText(MainActivity.this,"Ingrese un DNI asociado",Toast.LENGTH_LONG);
-                      //  toast.show();
-                    //}
-                    if (txtPassword.getText().toString()!=usuario.getPassword())
-                    {
-                        Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
-                        toast.show();
-                    }
-                    else {
-                        Intent intent = new Intent(MainActivity.this, MenuOptions.class);
-                        startActivity(intent);
-                    }
-                }
+
             }
         });
     }
@@ -78,26 +65,50 @@ public class MainActivity extends AppCompatActivity {
         String url="http://essalud.atwebpages.com/index.php/usuarios/"+texto;
 
 
+
         StringRequest peticion=new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
-                    JSONArray arreglo= new JSONArray(response);
-                    JSONObject objecto=arreglo.getJSONObject(0);
 
-                    usuario=new Usuario(objecto.getString("dni"), objecto.getString("password"));
+                    String usr,pwd,pwd2;
+                    usr= response.substring(94,102).toString();
+                    pwd= response.substring(146,154).toString();
+                    pwd2= txtPassword.getText().toString();
 
-                }catch (JSONException e){
-                    Toast.makeText(MainActivity.this,e.getMessage(), Toast.LENGTH_SHORT).show();
+                    if (pwd2.equals(pwd)  )
+                    {
+
+                        Intent intent = new Intent(MainActivity.this, MenuOptions.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast toast= Toast.makeText(MainActivity.this,"El password es incorrecto",Toast.LENGTH_LONG);
+                        toast.show();
+                    }
+
+                }catch (Exception e){
+                    Toast.makeText(MainActivity.this, e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
+
+
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(MainActivity.this,error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, error.getMessage(),Toast.LENGTH_SHORT).show();
             }
         });
+
+        RequestQueue cola = Volley.newRequestQueue(this);
+        cola.add(peticion);
+
+
+
+
+
     }
+
 
     public boolean validar()
     {
