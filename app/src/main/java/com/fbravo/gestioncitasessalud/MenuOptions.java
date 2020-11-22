@@ -9,9 +9,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.fbravo.gestioncitasessalud.entidades.Cita;
+
 public class MenuOptions extends AppCompatActivity {
     TextView NombreUsuario,DNIusuario;
     Button btn_cita;
+    
+    public static final Cita cita = null;
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,9 +27,11 @@ public class MenuOptions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivity();
+                
             }
         });
     }
+
 
     private void asignarReferencias() {
         NombreUsuario = findViewById(R.id.NombreUsuario);
