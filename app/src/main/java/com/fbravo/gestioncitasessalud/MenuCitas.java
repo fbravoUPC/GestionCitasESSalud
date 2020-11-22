@@ -40,7 +40,7 @@ public class MenuCitas extends AppCompatActivity {
         NombreUsuario = findViewById(R.id.EntradaUserCitas);
         DNIusuario = findViewById(R.id.DNIUserCitas);
         EdadUsuario =findViewById(R.id.EdadUserCitas);
-        NombreUsuario.setText("Bienvenido " + MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
+        NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
         EdadUsuario.setText(edad +" años");
         btn_ginecologia=findViewById(R.id.btn_ginecologia);
