@@ -31,15 +31,12 @@ public class MenuOptions extends AppCompatActivity {
             }
         });
     }
-
-
     private void asignarReferencias() {
         NombreUsuario = findViewById(R.id.NombreUsuario);
         DNIusuario = findViewById(R.id.DNIusuario);
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
         btn_cita=findViewById(R.id.btn_cita);
-
 
     }
     public void openActivity() {
