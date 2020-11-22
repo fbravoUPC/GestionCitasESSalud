@@ -26,7 +26,7 @@ public class MenuCitas extends AppCompatActivity {
         btn_ginecologia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MenuOptions.cita.setId_especialidad(2);
+                //MenuOptions.cita.setId_especialidad(2);
                 openActivity2();
 
             }
