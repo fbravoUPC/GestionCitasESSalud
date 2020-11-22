@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CitasProgramadas"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/degradado_fondo"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="150dp"
+                android:background="@drawable/degradado_fondo"
+                android:orientation="vertical"
+                >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/personv2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Buenas noches, Jose Tello"
+                    android:textSize="40px"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textAllCaps="false"
+                    android:textColor="#ffffff"
+                    android:layout_marginTop="30dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="443322467"
+                    android:textColor="#ffffff"
+                    android:textSize="40px"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textAllCaps="false"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="39 años"
+                    android:textColor="#ffffff"
+                    android:textSize="40px"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:textAllCaps="false"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="99dp"
+            android:layout_marginLeft="290dp"
+
+            >
+            <LinearLayout
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:layout_width="120dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/degradado_fondo"
+                    android:src="@drawable/fondotop" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#4F9ECF"
+        >
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:alpha=".47"
+            android:gravity="fill_vertical"
+            android:src="@drawable/citas"
+            android:layout_marginLeft="30dp"
+            android:layout_gravity="center_vertical"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="CITAS PROGRAMADAS"
+            android:layout_marginLeft="20dp"
+            android:textColor="#ffffff"
+            android:textSize="50px"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".ImplementosList">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                android:paddingTop="?attr/actionBarSize"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingLeft="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</LinearLayout>

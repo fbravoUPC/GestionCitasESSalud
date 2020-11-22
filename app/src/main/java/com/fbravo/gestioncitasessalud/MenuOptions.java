@@ -33,7 +33,7 @@ public class MenuOptions extends AppCompatActivity {
         btn_consultar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openActivity();
+                openActivity1();
 
             }
         });
@@ -45,10 +45,13 @@ public class MenuOptions extends AppCompatActivity {
         DNIusuario.setText(MainActivity.dni);
         btn_cita=findViewById(R.id.btn_cita);
         btn_consultar=findViewById(R.id.btn_consultar);
-
     }
     public void openActivity() {
         Intent intent = new Intent(this, MenuCitas.class);
+        startActivity(intent);
+    }
+    public void openActivity1() {
+        Intent intent = new Intent(this, CitasProgramadas.class);
         startActivity(intent);
     }
 }

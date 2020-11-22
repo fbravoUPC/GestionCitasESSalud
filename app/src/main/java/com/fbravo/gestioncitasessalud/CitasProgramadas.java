@@ -1,13 +1,14 @@
 package com.fbravo.gestioncitasessalud;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Lista_CitasProgramadas extends AppCompatActivity {
+import android.os.Bundle;
+
+public class CitasProgramadas extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_citas_programadas);
+        setContentView(R.layout.activity_citas_programadas);
     }
 }
