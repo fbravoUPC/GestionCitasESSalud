@@ -15,7 +15,7 @@ public class MenuCitas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_citas);
 
-        int años = Integer.parseInt(MainActivity.fnac);
-        int edad = 2020 - años;
+        //int años = Integer.parseInt(MainActivity.fnac);
+        //int edad = 2020 - años;
     }
 }
