@@ -13,7 +13,7 @@ import java.time.temporal.ChronoUnit;
 
 public class MenuCitas extends AppCompatActivity {
 
-    Button btn_ginecologia;
+    Button btn_ginecologia, btn_mamografia, btn_patologia, btn_consulta_general;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,34 @@ public class MenuCitas extends AppCompatActivity {
         //int años = Integer.parseInt(MainActivity.fnac);
         //int edad = 2020 - años;
         btn_ginecologia = findViewById(R.id.btn_ginecologia);
+        btn_mamografia = findViewById(R.id.btn_mamografia);
+        btn_patologia = findViewById(R.id.btn_patologia);
+        btn_consulta_general = findViewById(R.id.btn_consulta_general);
         btn_ginecologia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MenuOptions.cita.setId_especialidad(2);
+                openActivity2();
+
+            }
+        });
+        btn_mamografia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MenuOptions.cita.setId_especialidad(2);
+                openActivity2();
+
+            }
+        });
+        btn_patologia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //MenuOptions.cita.setId_especialidad(2);
+                openActivity2();
+
+            }
+        });
+        btn_consulta_general.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //MenuOptions.cita.setId_especialidad(2);
