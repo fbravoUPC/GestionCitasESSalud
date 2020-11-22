@@ -1,4 +1,8 @@
 package com.fbravo.gestioncitasessalud;
 
-public class Lista_CitasProgramadas {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Lista_CitasProgramadas extends AppCompatActivity {
+
+
 }
