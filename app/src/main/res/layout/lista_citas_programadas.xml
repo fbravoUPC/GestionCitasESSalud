@@ -39,6 +39,7 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
+                    android:id="@+id/NombreUserCitaPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buenas noches, Jose Tello"
@@ -49,6 +50,7 @@
                     android:textColor="#ffffff"
                     android:layout_marginTop="30dp" />
                 <TextView
+                    android:id="@+id/DNIUserCitaPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
@@ -58,7 +60,9 @@
                     android:textStyle="bold"
                     android:fontFamily="monospace"
                     android:textAllCaps="false"/>
+
                 <TextView
+                    android:id="@+id/EdadUserCitaPro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
