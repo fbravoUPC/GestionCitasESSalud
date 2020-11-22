@@ -1,4 +1,4 @@
 package com.fbravo.gestioncitasessalud;
 
-public class SolicitudCitas {
+public class Lista_CitasProgramadas {
 }

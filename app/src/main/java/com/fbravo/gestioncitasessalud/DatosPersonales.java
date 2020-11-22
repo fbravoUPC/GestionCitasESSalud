@@ -1,4 +1,4 @@
 package com.fbravo.gestioncitasessalud;
 
-public class Citas_programadas {
+public class DatosPersonales {
 }

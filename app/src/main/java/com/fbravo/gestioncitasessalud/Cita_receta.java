@@ -1,4 +1,4 @@
 package com.fbravo.gestioncitasessalud;
 
-public class MostrarHorario {
+public class Cita_receta {
 }

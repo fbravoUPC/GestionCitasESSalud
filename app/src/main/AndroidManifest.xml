@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GestionCitasESSalud"
         android:usesCleartextTraffic="true">
+        <activity android:name=".prueba"></activity>
         <activity android:name=".MenuCitas" />
         <activity android:name=".MenuOptions" />
         <activity android:name=".MainActivity">
