@@ -16,7 +16,7 @@ public class MenuCitas extends AppCompatActivity {
 
     Button btn_ginecologia;
     TextView NombreUsuario,DNIusuario,EdadUsuario;
-    int edad;
+    public static int edad;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
