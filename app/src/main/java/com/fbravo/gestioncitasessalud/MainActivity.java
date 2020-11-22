@@ -33,14 +33,13 @@ public class MainActivity extends AppCompatActivity {
     Button btnEntrar;
 
     Usuario usuario;
-    public static String name,lastnamep,lastnamem,pwd,pwd2,dni;
+    public static String name,lastnamep,lastnamem,pwd,pwd2,dni,fnac;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
        asginarReferencias();
-
 
     }
 
@@ -85,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         lastnamep=objeto.getString("apellidopate");
                         lastnamem=objeto.getString("apellidomate");
                         dni=objeto.getString("dni");
+                        fnac= objeto.getString("fechnacimiento");
 
                         Intent intent = new Intent(MainActivity.this, MenuOptions.class);
                         startActivity(intent);
