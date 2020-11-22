@@ -20,7 +20,7 @@ public class UbicacionSede extends AppCompatActivity {
         EdadUsuario =findViewById(R.id.EdadUserSedes);
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
-        EdadUsuario.setText(MenuCitas.edad +" años");
+        EdadUsuario.setText(MainActivity.edad +" años");
 
 
     }

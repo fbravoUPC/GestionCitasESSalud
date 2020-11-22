@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -23,15 +24,27 @@ import java.util.List;
 
 public class CitasProgramadas extends AppCompatActivity {
     ListView lstCitas;
+    TextView NombreUsuario,DNIusuario,EdadUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_citas_programadas);
         lstCitas = findViewById(R.id.lstCitas);
+        asignarReferencias();
         listarcitas();
     }
 
+    private void asignarReferencias() {
+        NombreUsuario = findViewById(R.id.NombreCitasProgramada);
+        DNIusuario = findViewById(R.id.DNICitasProgramadas);
+        EdadUsuario = findViewById(R.id.EdadCitasProgramadas);
+        NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
+        DNIusuario.setText(MainActivity.dni);
+        EdadUsuario.setText(MainActivity.edad +" años");
+    }
+
     private void listarcitas() {
+
         String dni = MainActivity.dni.toString();
         String url = "http://essalud.atwebpages.com/index.php/citas/"+dni;
 

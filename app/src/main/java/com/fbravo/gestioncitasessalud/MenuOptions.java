@@ -45,6 +45,9 @@ public class MenuOptions extends AppCompatActivity {
         DNIusuario.setText(MainActivity.dni);
         btn_cita=findViewById(R.id.btn_cita);
         btn_consultar=findViewById(R.id.btn_consultar);
+        String year= MainActivity.fnac.substring(0,4);
+        int fechanac = Integer.parseInt(year);
+        MainActivity.edad = 2020 - fechanac;
     }
     public void openActivity() {
         Intent intent = new Intent(this, MenuCitas.class);
