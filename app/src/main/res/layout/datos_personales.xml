@@ -39,35 +39,40 @@
                 android:layout_marginLeft="10dp">
 
                 <TextView
+                    android:id="@+id/NombreUserDatPer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buenas noches, Jose Tello"
-                    android:textSize="40px"
-                    android:textStyle="bold"
+                    android:layout_marginTop="30dp"
                     android:fontFamily="monospace"
+                    android:text="Buenas noches, Jose Tello"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
-                    android:layout_marginTop="30dp" />
+                    android:textSize="40px"
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/DNIUserDatPer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
                     android:text="443322467"
+                    android:textAllCaps="false"
                     android:textColor="#ffffff"
                     android:textSize="40px"
-                    android:textStyle="bold"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"/>
+                    android:textStyle="bold" />
+
                 <TextView
+                    android:id="@+id/EdadUserDatPer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"
+                    android:fontFamily="monospace"
                     android:text="39 años"
+                    android:textAllCaps="false"
                     android:textColor="#ffffff"
                     android:textSize="40px"
-                    android:textStyle="bold"
-                    android:fontFamily="monospace"
-                    android:textAllCaps="false"/>
+                    android:textStyle="bold" />
             </LinearLayout>
 
 

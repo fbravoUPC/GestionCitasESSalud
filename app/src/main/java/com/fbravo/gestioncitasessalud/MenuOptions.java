@@ -13,7 +13,7 @@ import com.fbravo.gestioncitasessalud.entidades.Cita;
 
 public class MenuOptions extends AppCompatActivity {
     TextView NombreUsuario,DNIusuario;
-    Button btn_cita, btn_consultar;
+    Button btn_cita, btn_consultar,btn_perfil;
     
     public static final Cita cita = null;
     
@@ -37,6 +37,13 @@ public class MenuOptions extends AppCompatActivity {
 
             }
         });
+        btn_perfil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openActivity2();
+
+            }
+        });
     }
     private void asignarReferencias() {
         NombreUsuario = findViewById(R.id.NombreUsuario);
@@ -45,6 +52,7 @@ public class MenuOptions extends AppCompatActivity {
         DNIusuario.setText(MainActivity.dni);
         btn_cita=findViewById(R.id.btn_cita);
         btn_consultar=findViewById(R.id.btn_consultar);
+        btn_perfil=findViewById(R.id.btn_perfil);
     }
     public void openActivity() {
         Intent intent = new Intent(this, MenuCitas.class);
@@ -52,6 +60,10 @@ public class MenuOptions extends AppCompatActivity {
     }
     public void openActivity1() {
         Intent intent = new Intent(this, CitasProgramadas.class);
+        startActivity(intent);
+    }
+    public void openActivity2() {
+        Intent intent = new Intent(this, DatosPersonales.class);
         startActivity(intent);
     }
 }
