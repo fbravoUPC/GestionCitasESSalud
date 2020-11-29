@@ -23,6 +23,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.widget.RelativeLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -38,8 +39,8 @@ import java.util.ArrayList;
 public class Maps extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMAp;
-    float latitud, longitud;
-    String titulo;
+    //float latitud, longitud;
+    //String titulo;
     boolean varios = false;
 
     ArrayList<LatLng> listaPuntos = new ArrayList<>();
@@ -58,24 +59,36 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     public void onMapReady(GoogleMap googleMap) {
         mMAp = googleMap;
         mMAp.getUiSettings().setZoomControlsEnabled(true);
+
+        //LatLng upc = new LatLng(latitud, longitud);
+        //mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
+
         recuperarDatos();
+
         if (varios == false) {
-            LatLng upc = new LatLng(latitud, longitud);
-            mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(), R.drawable.ic_sede1)));
-            mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(upc, 16));
+            //LatLng upc = new LatLng(latitud, longitud);
+            //mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(), R.drawable.ic_sede1)));
+            //mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(upc, 16));
         }else {
+
             mostrarVarios();
             for (int i=0; i<listaPuntos.size(); i++){
                 Marker mark = mMAp.addMarker(new MarkerOptions().position(listaPuntos.get(i)).title(""+listaTitulos.get(i)));
                 mark.showInfoWindow();
             }
             mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 10));
+
+       //     LatLng upc = new LatLng(latitud,longitud);
+       //     mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
+
+
             mMAp.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
                     String marcadorTitulo = marker.getTitle();
-                    Intent intent = new Intent(Maps.this, ListaHorario.class);
+                    Intent intent = new Intent(Maps.this, ListaHorarios.class);
                     intent.putExtra("titulo", marcadorTitulo);
+                    startActivity(intent);
                     return false;
                 }
             });
@@ -85,6 +98,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         if (getIntent().hasExtra("varios")) {
             varios = true;
         }
+
         //} else {
           //  latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
            // longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
@@ -103,7 +117,9 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         listaTitulos.add("Hospital Negreiros");
         listaTitulos.add("Hospital Sabogal");
         listaTitulos.add("Hospital Rebagliati");
+
     }
+
     private BitmapDescriptor cambiarIcono(Context context, int id) {
         Drawable imagen = ContextCompat.getDrawable(context, id);
         imagen.setBounds(0,0,imagen.getIntrinsicWidth(), imagen.getIntrinsicHeight());
@@ -112,6 +128,13 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         imagen.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
+
+ //   private static final LatLng NEGREIROS = new LatLng(-12.015633, -77.0984722);
+ //   private Marker melbourne = mMAp.addMarker(new MarkerOptions()
+ //           .position(NEGREIROS)
+ //           .title("NEGREIROS")
+ //           .snippet("Population: 4,137,400")
+ //           .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sede1)));
 }
 
 
