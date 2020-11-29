@@ -40,7 +40,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     private GoogleMap mMAp;
     float latitud, longitud;
     String titulo;
-   // boolean varios = false;
+    boolean varios = false;
 
     ArrayList<LatLng> listaPuntos = new ArrayList<>();
     ArrayList<String> listaTitulos = new ArrayList<>();
@@ -57,19 +57,19 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMAp = googleMap;
-
         mMAp.getUiSettings().setZoomControlsEnabled(true);
-//        recuperarDatos();
-     //   if (varios == false) {
+        recuperarDatos();
+        if (varios == false) {
             LatLng upc = new LatLng(latitud, longitud);
             mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(), R.drawable.ic_sede1)));
             mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(upc, 16));
         }else {
             mostrarVarios();
             for (int i=0; i<listaPuntos.size(); i++){
-                mMAp.addMarker(new MarkerOptions().position(listaPuntos.get(i)).title(""+listaTitulos.get(i)));
+                Marker mark = mMAp.addMarker(new MarkerOptions().position(listaPuntos.get(i)).title(""+listaTitulos.get(i)));
+                mark.showInfoWindow();
             }
-            mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 16));
+            mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 10));
             mMAp.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
@@ -81,14 +81,16 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
             });
         }
     }
- //   private void recuperarDatos() {
- //       if (getIntent().hasExtra("varios")){
- //           varios=true;
- //       }
- //       latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
- //       longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
- //       titulo = getIntent().getStringExtra("titulo");
- //   }
+    private void recuperarDatos() {
+        if (getIntent().hasExtra("varios")) {
+            varios = true;
+        }
+        //} else {
+          //  latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
+           // longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
+           // titulo = getIntent().getStringExtra("titulo");
+       // }
+    }
     private void mostrarVarios() {
         LatLng negreiros = new LatLng(-12.015633, -77.0984722);
         LatLng sabogal = new LatLng(-12.0584037, -77.1161382);

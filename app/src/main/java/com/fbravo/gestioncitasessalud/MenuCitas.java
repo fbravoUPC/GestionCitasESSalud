@@ -31,7 +31,7 @@ public class MenuCitas extends AppCompatActivity {
                // MenuOptions.cita.setId_especialidad(2);
                 //openActivity2()
                 Intent intent = new Intent(MenuCitas.this, Maps.class);
-                intent.putExtra("varios", 1);
+                intent.putExtra("varios", "mapa");
                 startActivity(intent);
             }
         });
