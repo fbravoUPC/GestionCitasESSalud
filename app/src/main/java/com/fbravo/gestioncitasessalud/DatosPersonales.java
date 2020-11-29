@@ -21,7 +21,7 @@ public class DatosPersonales extends AppCompatActivity {
         EdadUsuario =findViewById(R.id.EdadUserDatPer);
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
-        EdadUsuario.setText(MenuCitas.edad +" años");
+
 
 
     }
