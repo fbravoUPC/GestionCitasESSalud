@@ -15,7 +15,7 @@ import java.util.Map;
 
 public class MenuCitas extends AppCompatActivity {
 
-    Button btn_ginecologia;
+    Button btn_ginecologia, btn_mamografia, btn_patologia, btn_consulta_general;
     TextView NombreUsuario,DNIusuario,EdadUsuario;
 
     @Override
@@ -35,6 +35,40 @@ public class MenuCitas extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btn_mamografia = findViewById(R.id.btn_mamografia);
+        btn_mamografia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // MenuOptions.cita.setId_especialidad(2);
+                //openActivity2()
+                Intent intent = new Intent(MenuCitas.this, Maps.class);
+                intent.putExtra("varios", "mapa");
+                startActivity(intent);
+            }
+        });
+        btn_patologia = findViewById(R.id.btn_patologia);
+        btn_patologia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // MenuOptions.cita.setId_especialidad(2);
+                //openActivity2()
+                Intent intent = new Intent(MenuCitas.this, Maps.class);
+                intent.putExtra("varios", "mapa");
+                startActivity(intent);
+            }
+        });
+        btn_consulta_general = findViewById(R.id.btn_consulta_general);
+        btn_consulta_general.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // MenuOptions.cita.setId_especialidad(2);
+                //openActivity2()
+                Intent intent = new Intent(MenuCitas.this, Maps.class);
+                intent.putExtra("varios", "mapa");
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void asignarReferencias() {
@@ -49,8 +83,8 @@ public class MenuCitas extends AppCompatActivity {
 
     }
 
-    public void openActivity2() {
+   // public void openActivity2() {
         //Intent intent = new Intent(this, UbicacionSede.class);
         //startActivity(intent);
-    }
+   // }
 }
