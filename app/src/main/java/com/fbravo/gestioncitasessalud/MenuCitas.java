@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
+import java.util.Map;
 
 public class MenuCitas extends AppCompatActivity {
 
@@ -28,8 +29,10 @@ public class MenuCitas extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                // MenuOptions.cita.setId_especialidad(2);
-                openActivity2();
-
+                //openActivity2()
+                Intent intent = new Intent(MenuCitas.this, Maps.class);
+                intent.putExtra("varios", 1);
+                startActivity(intent);
             }
         });
     }
@@ -47,7 +50,7 @@ public class MenuCitas extends AppCompatActivity {
     }
 
     public void openActivity2() {
-        Intent intent = new Intent(this, UbicacionSede.class);
-        startActivity(intent);
+        //Intent intent = new Intent(this, UbicacionSede.class);
+        //startActivity(intent);
     }
 }

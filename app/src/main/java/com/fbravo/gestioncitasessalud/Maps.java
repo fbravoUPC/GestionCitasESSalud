@@ -1,46 +1,65 @@
 package com.fbravo.gestioncitasessalud;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Maps extends FragmentActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
 
-    private GoogleMap mMap;
+    private GoogleMap mMAp;
+    float latitud, longitud;
+    String titulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+
+        SupportMapFragment mapFragment = (SupportMapFragment)getSupportFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
 
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        mMap = googleMap;
+        mMAp = googleMap;
 
-        // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMAp.getUiSettings().setZoomControlsEnabled(true);
+        recuperarDatos();
+
+        LatLng upc = new LatLng(latitud,longitud);
+        mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.shop)));
+        mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(upc, 16));
+    }
+    private void recuperarDatos() {
+        latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
+        longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
+        titulo = getIntent().getStringExtra("titulo");
+    }
+    private BitmapDescriptor cambiarIcono(Context context, int id) {
+        Drawable imagen = ContextCompat.getDrawable(context, id);
+        imagen.setBounds(0,0,imagen.getIntrinsicWidth(), imagen.getIntrinsicHeight());
+        Bitmap bitmap = Bitmap.createBitmap(imagen.getMinimumWidth(), imagen.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        imagen.draw(canvas);
+        return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 }
+
+
+
+
