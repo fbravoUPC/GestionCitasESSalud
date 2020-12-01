@@ -23,6 +23,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.RelativeLayout;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -42,6 +43,7 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
     //float latitud, longitud;
     //String titulo;
     boolean varios = false;
+    boolean kk = false;
 
     ArrayList<LatLng> listaPuntos = new ArrayList<>();
     ArrayList<String> listaTitulos = new ArrayList<>();
@@ -73,10 +75,10 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
 
             mostrarVarios();
             for (int i=0; i<listaPuntos.size(); i++){
-                Marker mark = mMAp.addMarker(new MarkerOptions().position(listaPuntos.get(i)).title(""+listaTitulos.get(i)));
+                Marker mark = mMAp.addMarker(new MarkerOptions().position(listaPuntos.get(i)).title(""+listaTitulos.get(i)).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
                 mark.showInfoWindow();
             }
-            mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 10));
+            mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 16));
 
        //     LatLng upc = new LatLng(latitud,longitud);
        //     mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
@@ -85,10 +87,23 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
             mMAp.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
                 @Override
                 public boolean onMarkerClick(Marker marker) {
-                    String marcadorTitulo = marker.getTitle();
-                    Intent intent = new Intent(Maps.this, ListaHorarios.class);
-                    intent.putExtra("titulo", marcadorTitulo);
-                    startActivity(intent);
+
+
+                    if (kk) {
+                        String marcadorTitulo = marker.getTitle();
+                        Intent intent = new Intent(Maps.this, ListaHorarios.class);
+                        intent.putExtra("titulo", marcadorTitulo);
+                        startActivity(intent);
+                    } else {
+                        kk = true;
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                kk = false;
+                            }
+                        }, 5000);
+                    }
+
                     return false;
                 }
             });
