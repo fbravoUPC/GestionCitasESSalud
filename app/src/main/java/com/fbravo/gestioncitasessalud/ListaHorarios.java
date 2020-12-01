@@ -3,19 +3,45 @@ package com.fbravo.gestioncitasessalud;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ListaHorarios extends AppCompatActivity {
 
     DatePickerDialog picker;
     EditText txtCalendar;
     TextView NombreUsuario,DNIusuario,EdadUsuario;
+    Button btn_ViewHorarios,btn_ConfirmarHorarios;
+    ListView listaHorarios;
+    String id_especialidad;
+    String id_sede;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,12 +49,30 @@ public class ListaHorarios extends AppCompatActivity {
         asignarReferencias();
     }
     private void asignarReferencias(){
-        NombreUsuario = findViewById(R.id.EntradaUserCitas);
-        DNIusuario = findViewById(R.id.DNIUserCitas);
-        EdadUsuario =findViewById(R.id.EdadUserCitas);
+
+        NombreUsuario = findViewById(R.id.NombreUsuario);
+        DNIusuario = findViewById(R.id.DNIusuario);
+        EdadUsuario =findViewById(R.id.EdadUsuario);
+        listaHorarios =findViewById(R.id.listaHorarios);
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
         EdadUsuario.setText(MainActivity.edad +" años");
+
+        btn_ViewHorarios=findViewById(R.id.btn_ViewHorarios);
+        btn_ViewHorarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mostrarHorarios();
+            }
+        });
+
+        btn_ConfirmarHorarios=findViewById(R.id.btn_ViewHorarios);
+        btn_ConfirmarHorarios.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registrarCita();
+            }
+        });
 
         txtCalendar=findViewById(R.id.txtCalendar);
         txtCalendar.setOnClickListener(new View.OnClickListener() {
@@ -38,6 +82,55 @@ public class ListaHorarios extends AppCompatActivity {
             }
         });
     }
+
+    private void registrarCita() {
+
+    }
+
+    private void mostrarHorarios() {
+        id_especialidad= "1" ;
+        id_sede="1";
+        String url="http://essalud.atwebpages.com/index.php/doctores/";
+
+        StringRequest peticion = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONArray arreglo= new JSONArray(response);
+                    List<String> items = new ArrayList<>();
+                    for (int i=0;i<arreglo.length();i++){
+                        JSONObject objeto = arreglo.getJSONObject(i);
+                        items.add("Doctor: "+ objeto.getString("NOMBRE")+" "+  objeto.getString("APELLIDOPATE"));
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<>( ListaHorarios.this,android.R.layout.simple_list_item_1,items);
+                    listaHorarios.setAdapter(adapter);
+                }catch (JSONException e){
+                    Toast.makeText(ListaHorarios.this, e.getMessage(),Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ListaHorarios.this, error.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros= new HashMap<>();
+                parametros.put("ID_ESPECIALIDAD",id_especialidad);
+                parametros.put("ID_SEDE",id_sede);
+                return parametros;
+
+            }
+        };
+
+        RequestQueue cola = Volley.newRequestQueue(this);
+        cola.add(peticion);
+
+    }
+
     private void mostrarCalendario(){
         Calendar calendar=Calendar.getInstance();
         int dia=calendar.get(calendar.DAY_OF_MONTH);
