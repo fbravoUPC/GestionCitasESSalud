@@ -41,6 +41,7 @@ public class ListaHorarios extends AppCompatActivity {
     ListView listaHorarios;
     String id_especialidad;
     String id_sede;
+    String id_usuario, id_doctor,      fecha,    id_horario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +55,7 @@ public class ListaHorarios extends AppCompatActivity {
         DNIusuario = findViewById(R.id.DNIusuario);
         EdadUsuario =findViewById(R.id.EdadUsuario);
         listaHorarios =findViewById(R.id.listaHorarios);
+
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
         EdadUsuario.setText(MainActivity.edad +" años");
@@ -100,12 +102,12 @@ public class ListaHorarios extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros= new HashMap<>();
-                parametros.put("$ID_USUARIO",id_especialidad);
-                parametros.put("$ID_DOCTOR",id_sede);
+                parametros.put("$ID_USUARIO",id_usuario);
+                parametros.put("$ID_DOCTOR",id_doctor);
                 parametros.put("$ID_SEDE",id_sede);
-                parametros.put("$ID_ESPECIALIDAD",id_sede);
-                parametros.put("$fecha",id_sede);
-                parametros.put("$ID_HORARIO",id_sede);
+                parametros.put("$ID_ESPECIALIDAD",id_especialidad);
+                parametros.put("$fecha",fecha);
+                parametros.put("$ID_HORARIO",id_horario);
 
                 return parametros;
             }
