@@ -28,7 +28,7 @@ public class MenuCitas extends AppCompatActivity {
         btn_ginecologia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // MenuOptions.cita.setId_especialidad(2);
+                // MenuOptions.cita.setId_especialidad(2);
                 //openActivity2()
                 Intent intent = new Intent(MenuCitas.this, Maps.class);
                 intent.putExtra("varios", "mapa");
@@ -83,8 +83,8 @@ public class MenuCitas extends AppCompatActivity {
 
     }
 
-   // public void openActivity2() {
-        //Intent intent = new Intent(this, UbicacionSede.class);
-        //startActivity(intent);
-   // }
+    // public void openActivity2() {
+    //Intent intent = new Intent(this, UbicacionSede.class);
+    //startActivity(intent);
+    // }
 }

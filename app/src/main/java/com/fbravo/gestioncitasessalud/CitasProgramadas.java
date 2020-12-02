@@ -56,7 +56,9 @@ public class CitasProgramadas extends AppCompatActivity {
                     List<String> items = new ArrayList<>();
                     for (int i=0;i<arreglo.length();i++){
                         JSONObject objeto = arreglo.getJSONObject(i);
-                        items.add("Doctor: "+ objeto.getString("nombre_doctor")+" "+  objeto.getString("apellido_doctor")+ " Especialidad: "+objeto.getString("nombreespecialidad")+" Fecha: "+objeto.getString("fecha")+" "+objeto.getString("hora") +" Sede: "+objeto.getString("distrito"));
+                        // items.add("Doctor: "+ objeto.getString("nombre_doctor")+" "+  objeto.getString("apellido_doctor")+ " Especialidad: "+objeto.getString("nombreespecialidad")+" Fecha: "+objeto.getString("fecha")+" "+objeto.getString("hora") +" Sede: "+objeto.getString("distrito"));
+                        items.add("Doctor:"+ objeto.getString("nombre_doctor")+ " "+ objeto.getString("apellido_doctor")+"\n"+ "Especialidad:"+objeto.getString("nombreespecialidad")+"\n"+"Fecha: "+objeto.getString("fecha")+" "+objeto.getString("hora") +"\n"+"Sede: "+objeto.getString("distrito"));
+
                     }
 
                     ArrayAdapter<String> adapter = new ArrayAdapter<>( CitasProgramadas.this,android.R.layout.simple_list_item_1,items);

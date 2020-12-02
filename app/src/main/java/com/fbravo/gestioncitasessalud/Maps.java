@@ -80,8 +80,8 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
             }
             mMAp.animateCamera(CameraUpdateFactory.newLatLngZoom(listaPuntos.get(listaPuntos.size()-1), 16));
 
-       //     LatLng upc = new LatLng(latitud,longitud);
-       //     mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
+            //     LatLng upc = new LatLng(latitud,longitud);
+            //     mMAp.addMarker(new MarkerOptions().position(upc).title(titulo).icon(cambiarIcono(getApplicationContext(),R.drawable.ic_sede1)));
 
 
             mMAp.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
@@ -115,10 +115,10 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         }
 
         //} else {
-          //  latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
-           // longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
-           // titulo = getIntent().getStringExtra("titulo");
-       // }
+        //  latitud = Float.parseFloat(getIntent().getStringExtra("latitud"));
+        // longitud = Float.parseFloat(getIntent().getStringExtra("longitud"));
+        // titulo = getIntent().getStringExtra("titulo");
+        // }
     }
     private void mostrarVarios() {
         LatLng negreiros = new LatLng(-12.015633, -77.0984722);
@@ -144,12 +144,10 @@ public class Maps extends FragmentActivity implements OnMapReadyCallback {
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
- //   private static final LatLng NEGREIROS = new LatLng(-12.015633, -77.0984722);
- //   private Marker melbourne = mMAp.addMarker(new MarkerOptions()
- //           .position(NEGREIROS)
- //           .title("NEGREIROS")
- //           .snippet("Population: 4,137,400")
- //           .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sede1)));
+    //   private static final LatLng NEGREIROS = new LatLng(-12.015633, -77.0984722);
+    //   private Marker melbourne = mMAp.addMarker(new MarkerOptions()
+    //           .position(NEGREIROS)
+    //           .title("NEGREIROS")
+    //           .snippet("Population: 4,137,400")
+    //           .icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_sede1)));
 }
-
-
