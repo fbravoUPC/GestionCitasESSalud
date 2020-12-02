@@ -14,9 +14,9 @@ import com.fbravo.gestioncitasessalud.entidades.Cita;
 public class MenuOptions extends AppCompatActivity {
     TextView NombreUsuario,DNIusuario;
     Button btn_cita, btn_consultar;
-    
+
     public static final Cita cita = null;
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MenuOptions extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 openActivity();
-                
+
             }
         });
         btn_consultar.setOnClickListener(new View.OnClickListener() {

@@ -1,6 +1,8 @@
 package com.fbravo.gestioncitasessalud;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -14,6 +16,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.fbravo.gestioncitasessalud.entidades.Cita;
+import com.fbravo.gestioncitasessalud.entidades.CitaSede;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,23 +29,40 @@ import java.util.List;
 
 public class CitasProgramadas extends AppCompatActivity {
     ListView lstCitas;
-    TextView NombreUsuario,DNIusuario,EdadUsuario;
+    TextView NombreUsuario,DNIusuario,EdadUsuario,NomDoctor,NomSede,NomFecha,NomEspecialidad;
+
+    RecyclerView recyclerView;
+
+
+
+    ArrayList<CitaSede> listaCitas = new ArrayList<>();
+    AdaptadorCita customAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_citas_programadas);
-        lstCitas = findViewById(R.id.lstCitas);
-        asignarReferencias();
+              asignarReferencias();
         listarcitas();
+
     }
 
     private void asignarReferencias() {
+        lstCitas = findViewById(R.id.lstCitas);
         NombreUsuario = findViewById(R.id.NombreCitasProgramada);
         DNIusuario = findViewById(R.id.DNICitasProgramadas);
         EdadUsuario = findViewById(R.id.EdadCitasProgramadas);
+        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         NombreUsuario.setText(MainActivity.name+" "+MainActivity.lastnamep +" "+MainActivity.lastnamem);
         DNIusuario.setText(MainActivity.dni);
         EdadUsuario.setText(MainActivity.edad +" años");
+
+        NomDoctor = findViewById(R.id.NomDoctor);
+        NomEspecialidad = findViewById(R.id.NomEspecialidad);
+        NomFecha = findViewById(R.id.NomFecha);
+        NomSede = findViewById(R.id.NomSede);
+
     }
 
     private void listarcitas() {
@@ -52,15 +74,36 @@ public class CitasProgramadas extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 try {
+
+
+
                     JSONArray arreglo= new JSONArray(response);
-                    List<String> items = new ArrayList<>();
+                    //List<String> items = new ArrayList<>();
+                   // List<CitaSede> items = new ArrayList<>();
+                    ArrayList<CitaSede> items = new ArrayList<>();
                     for (int i=0;i<arreglo.length();i++){
                         JSONObject objeto = arreglo.getJSONObject(i);
-                        items.add("Doctor: "+ objeto.getString("nombre_doctor")+" "+  objeto.getString("apellido_doctor")+ " Especialidad: "+objeto.getString("nombreespecialidad")+" Fecha: "+objeto.getString("fecha")+" "+objeto.getString("hora") +" Sede: "+objeto.getString("distrito"));
+                        CitaSede cita = new CitaSede( objeto.getString("nombre_doctor")+ " "+ objeto.getString("apellido_doctor"),objeto.getString("distrito"),objeto.getString("fecha"),objeto.getString("nombreespecialidad"));
+
+                       // items.add("Doctor:"+ objeto.getString("nombre_doctor")+ " "+ objeto.getString("apellido_doctor")+"\n"+ "Especialidad:"+objeto.getString("nombreespecialidad")+"\n"+"Fecha: "+objeto.getString("fecha")+" "+objeto.getString("hora") +"\n"+"Sede: "+objeto.getString("distrito"));
+                        items.add(cita);
+
                     }
 
-                    ArrayAdapter<String> adapter = new ArrayAdapter<>( CitasProgramadas.this,android.R.layout.simple_list_item_1,items);
+
+
+
+                    ArrayAdapter<CitaSede> adapter = new ArrayAdapter<>( CitasProgramadas.this,android.R.layout.simple_list_item_1,items);
                     lstCitas.setAdapter(adapter);
+                    customAdapter = new AdaptadorCita(CitasProgramadas.this,items);
+
+
+                    recyclerView.setAdapter(customAdapter);
+                    recyclerView.setLayoutManager(new LinearLayoutManager(CitasProgramadas.this));
+
+
+
+
                 }catch (JSONException e){
                     Toast.makeText(CitasProgramadas.this, e.getMessage(),Toast.LENGTH_SHORT).show();
                 }
