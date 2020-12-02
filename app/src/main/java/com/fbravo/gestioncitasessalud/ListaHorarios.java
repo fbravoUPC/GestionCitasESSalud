@@ -84,7 +84,35 @@ public class ListaHorarios extends AppCompatActivity {
     }
 
     private void registrarCita() {
+        String url="http://essalud.atwebpages.com/index.php/doctores/";
 
+        StringRequest peticion = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(ListaHorarios.this, "Se inserto correctamente", Toast.LENGTH_SHORT).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ListaHorarios.this, error.getMessage(),Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> parametros= new HashMap<>();
+                parametros.put("$ID_USUARIO",id_especialidad);
+                parametros.put("$ID_DOCTOR",id_sede);
+                parametros.put("$ID_SEDE",id_sede);
+                parametros.put("$ID_ESPECIALIDAD",id_sede);
+                parametros.put("$fecha",id_sede);
+                parametros.put("$ID_HORARIO",id_sede);
+
+                return parametros;
+            }
+        };
+
+        RequestQueue cola = Volley.newRequestQueue(this);
+        cola.add(peticion);
     }
 
     private void mostrarHorarios() {
@@ -119,8 +147,8 @@ public class ListaHorarios extends AppCompatActivity {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String,String> parametros= new HashMap<>();
-                parametros.put("ID_ESPECIALIDAD",id_especialidad);
-                parametros.put("ID_SEDE",id_sede);
+                parametros.put("id_especialidad",id_especialidad);
+                parametros.put("id_sede",id_sede);
                 return parametros;
 
             }
