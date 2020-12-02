@@ -41,7 +41,7 @@ public class ListaHorarios extends AppCompatActivity {
     ListView listaHorarios;
     String id_especialidad;
     String id_sede;
-    String id_usuario, id_doctor,      fecha,    id_horario;
+    String id_usuario, id_doctor,      fecha,    id_horario,estado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +60,15 @@ public class ListaHorarios extends AppCompatActivity {
         DNIusuario.setText(MainActivity.dni);
         EdadUsuario.setText(MainActivity.edad +" años");
 
+
+        id_usuario="30";
+        id_doctor="1";
+        fecha="2020/01/01";
+        id_horario="1";
+        id_especialidad="1";
+        id_sede="1";
+        estado="P";
+
         btn_ViewHorarios=findViewById(R.id.btn_ViewHorarios);
         btn_ViewHorarios.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +77,7 @@ public class ListaHorarios extends AppCompatActivity {
             }
         });
 
-        btn_ConfirmarHorarios=findViewById(R.id.btn_ViewHorarios);
+      btn_ConfirmarHorarios=findViewById(R.id.btn_ConfirmarHorarios);
         btn_ConfirmarHorarios.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,9 +96,9 @@ public class ListaHorarios extends AppCompatActivity {
     }
 
     private void registrarCita() {
-        String url="http://essalud.atwebpages.com/index.php/doctores/";
+        String url="http://essalud.atwebpages.com/index.php/citas";
 
-        StringRequest peticion = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+        StringRequest peticion = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(ListaHorarios.this, "Se inserto correctamente", Toast.LENGTH_SHORT).show();
@@ -102,13 +111,14 @@ public class ListaHorarios extends AppCompatActivity {
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros= new HashMap<>();
-                parametros.put("$ID_USUARIO",id_usuario);
-                parametros.put("$ID_DOCTOR",id_doctor);
-                parametros.put("$ID_SEDE",id_sede);
-                parametros.put("$ID_ESPECIALIDAD",id_especialidad);
-                parametros.put("$fecha",fecha);
-                parametros.put("$ID_HORARIO",id_horario);
+                Map<String, String> parametros= new HashMap<>();
+                parametros.put("ID_USUARIO",id_usuario);
+                parametros.put("ID_DOCTOR",id_doctor);
+                parametros.put("ID_SEDE",id_sede);
+                parametros.put("ID_ESPECIALIDAD",id_especialidad);
+                parametros.put("fecha",fecha);
+                parametros.put("ID_HORARIO",id_horario);
+
 
                 return parametros;
             }
@@ -121,7 +131,7 @@ public class ListaHorarios extends AppCompatActivity {
     private void mostrarHorarios() {
         id_especialidad= "1" ;
         id_sede="1";
-        //String url="http://essalud.atwebpages.com/index.php/doctores/";
+
 
         String url="http://essalud.atwebpages.com/index.php/doctores/id_esp=1&id_sede=1";
 
@@ -133,7 +143,7 @@ public class ListaHorarios extends AppCompatActivity {
                     List<String> items = new ArrayList<>();
                     for (int i=0;i<arreglo.length();i++){
                         JSONObject objeto = arreglo.getJSONObject(i);
-                        items.add("Doctor: "+ objeto.getString("NOMBRE")+" "+  objeto.getString("APELLIDOPATE"));
+                        items.add("Doctor: "+ objeto.getString("nombre")+" "+  objeto.getString("apellidopate")+" "+"\n"+ "Hora:"+ objeto.getString("HORAINGRESO"));
                     }
 
                     ArrayAdapter<String> adapter = new ArrayAdapter<>( ListaHorarios.this,android.R.layout.simple_list_item_1,items);
